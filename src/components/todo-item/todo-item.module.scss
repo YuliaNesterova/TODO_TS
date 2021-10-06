@@ -1,0 +1,26 @@
+.Todo {
+    background: #FFFEFB;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.04), 0 6px 10px rgba(0, 0, 0, 0.02);
+    padding: 20px 15px;
+    border-radius: 4px;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    &__text {
+        margin: 0;
+
+        &_checked {
+            text-decoration: line-through;
+        }
+    }
+
+    &__buttons {
+        width: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
