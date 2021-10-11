@@ -1,0 +1,23 @@
+{
+  "Verbose": false,
+  "Exclude": [
+    "\\.css",
+    "\\.scss",
+    "\\.js",
+    "\\.jsx",
+    "\\.ts",
+    "\\.tsx",
+    "\\.conf",
+    "\\.html",
+    "\\.md",
+    "\\.cmd",
+    "\\.env",
+    "config/",
+    "k8s/",
+    "include.sh",
+    "response.txt",
+    ".eslintinfo",
+    ".stylelintinfo",
+    "cli/"
+  ]
+}

@@ -1,0 +1,24 @@
+1) ^ in package.json
+2) decompose /api
+3) ts actions
+4) share constants and typize reducer properly
+5) no logs in reducer !
+6) redux re-exports
+7) sagas in separate folder
+8) sagas namings (Watcher, Worker)
+9) thrick with error in saga
+10) saparate sagas
+11) no redux hooks - do it with container
+12) form - use TS wihout guards
+13) formElement - type submit
+14) className={cn(`${BLOCK_NAME}`)} => className={cn(BLOCK_NAME)}
+15) useless Todo component
+16) TodoItem classnames wrong usage
+17) use useCallback and useMemo
+18) propsTypes => PropsType (all types end with Type and begin with uppercase)
+19) separate connected components
+20) use React.memo (React destructure of course)
+
+a) store creation - do it with redux-core-modules (see boilerplate)
+b) use react-final-form for form
+c) use boilerplate for setup
