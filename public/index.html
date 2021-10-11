@@ -133,24 +133,24 @@
 </head>
 
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root">
-    <div class="icon-layout" id='icon-layout'>
-      <div class="loading-icon" id='loading-icon'>
-        <svg class="circular" id='circular' viewBox="25 25 50 50">
-          <circle id='path' class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-        </svg>
-      </div>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root">
+  <div class="icon-layout" id='icon-layout'>
+    <div class="loading-icon" id='loading-icon'>
+      <svg class="circular" id='circular' viewBox="25 25 50 50">
+        <circle id='path' class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+      </svg>
     </div>
-    <script>
-      var isNotIE11 = !Boolean(window.MSInputMethodContext) || !Boolean(document.documentMode);
-      if (isNotIE11) {
-        document.getElementById('circular').className.baseVal = "circular--modern"
-        document.getElementById('path').className.baseVal = "path--modern"
-      }
-    </script>
   </div>
-  <div id="portal"></div>
+  <script>
+    var isNotIE11 = !Boolean(window.MSInputMethodContext) || !Boolean(document.documentMode);
+    if (isNotIE11) {
+      document.getElementById('circular').className.baseVal = "circular--modern"
+      document.getElementById('path').className.baseVal = "path--modern"
+    }
+  </script>
+</div>
+<div id="portal"></div>
 </body>
 
 </html>

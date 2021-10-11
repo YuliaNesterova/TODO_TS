@@ -1,9 +1,9 @@
 import 'fast-text-encoding/text';
 /*
-    if you need some polyfills and you are not in "rus" or "euro" version
-    please insert below (package is included)
-    import 'react-app-polyfill/stable';
-*/
+ if you need some polyfills and you are not in "rus" or "euro" version
+ please insert below (package is included)
+ import 'react-app-polyfill/stable';
+ */
 import 'reset-css';
 import React from 'react';
 import ReactDOM from 'react-dom';
