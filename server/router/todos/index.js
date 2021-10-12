@@ -10,9 +10,9 @@ const {
 
 const todosRouter = router.Router();
 
-todosRouter.get('/todos', getItems);
+todosRouter.get('/', getItems);
 todosRouter.post(
-  '/todos',
+  '/',
   celebrate({
     body: Joi.object().keys({
       todo: Joi.string().required(),
@@ -21,7 +21,7 @@ todosRouter.post(
   createItem,
 );
 todosRouter.delete(
-  '/todos/:todoId',
+  '//:todoId',
   celebrate({
     params: Joi.object().keys({
       todoId: Joi.string()
@@ -32,7 +32,7 @@ todosRouter.delete(
   deleteItem,
 );
 todosRouter.put(
-  '/todos/:todoId/status',
+  '//:todoId/status',
   celebrate({
     params: Joi.object().keys({
       todoId: Joi.string()
@@ -43,7 +43,7 @@ todosRouter.put(
   markItem,
 );
 todosRouter.delete(
-  '/todos/:todoId/status',
+  '//:todoId/status',
   celebrate({
     params: Joi.object().keys({
       todoId: Joi.string()
