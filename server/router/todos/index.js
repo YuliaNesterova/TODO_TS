@@ -21,7 +21,7 @@ todosRouter.post(
   createItem,
 );
 todosRouter.delete(
-  '//:todoId',
+  '/:todoId',
   celebrate({
     params: Joi.object().keys({
       todoId: Joi.string()
@@ -32,7 +32,7 @@ todosRouter.delete(
   deleteItem,
 );
 todosRouter.put(
-  '//:todoId/status',
+  '/:todoId/status',
   celebrate({
     params: Joi.object().keys({
       todoId: Joi.string()
@@ -43,7 +43,7 @@ todosRouter.put(
   markItem,
 );
 todosRouter.delete(
-  '//:todoId/status',
+  '/:todoId/status',
   celebrate({
     params: Joi.object().keys({
       todoId: Joi.string()
