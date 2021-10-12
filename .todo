@@ -8,16 +8,27 @@
 8) checkboxClickFunction destructuring
 9) onHandleAddTodo - on/handle
 10) classname on Field
-11) multiple props setted with object
+11) multiple params setted with object in funcs
 12) settimout awwwwww
 13) index.module.scss
-14) fetch in mount
+14) fetch in mount (initLoadManagerActionSaga)
 15) <Text> onstead of <p>
 16) name of component = name of folder = name of BLOCK_NAME
 17) interface (class+function full typing)
 / type (props,params,output,structures)
+type PropsType (Component)
+type ParamsType (util/function/etc)
+
 18)
 const BASE_URL = '/todos';
 
 export const mainTodosEndpoint = BASE_URL;
 19) FormSimpleInput in Form
+20) SimpleInput in Form
+21) validations react final Form
+(
+  не менее 10 символов,
+  не более 20 символов, только буквы
+)
+22) ReduxStoreLoader
+23) submit form fetchFormManagerSagaAction

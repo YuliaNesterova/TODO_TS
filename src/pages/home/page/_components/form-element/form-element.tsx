@@ -2,13 +2,14 @@ import React, { memo } from 'react';
 import classnames from 'classnames/bind';
 import { Form, Field } from 'react-final-form';
 import { BasicPlusIcon, ButtonLink } from '@wildberries/ui-kit';
+import { FormApi } from 'final-form';
 import styles from './form-element.module.scss';
 
 const cn = classnames.bind(styles);
 const BLOCK_NAME = 'Form';
 
 type PropsType = {
-  onHandleAddTodo: (values: object, form: object) => void;
+  onHandleAddTodo: (values: object, form: FormApi<{ todo: string }>) => void;
 };
 
 export const FormElement = memo(({ onHandleAddTodo }: PropsType) => {

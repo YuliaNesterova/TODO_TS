@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { FormApi } from 'final-form';
 import { addTodoAsync } from '@/_redux/todos';
 import { FormElement } from '../form-element/form-element';
 
@@ -12,10 +13,10 @@ interface IValues {
 }
 
 class TodoForm extends Component<PropsType> {
-  handleAddItem = (values: IValues, form: HTMLFormElement) => {
+  handleAddItem = (values: IValues, form: FormApi<{ todo: string }>) => {
     const { addTodo } = this.props;
     addTodo(values.todo);
-    setTimeout(form.reset);
+    form.reset();
   };
 
   render() {
