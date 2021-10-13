@@ -1,7 +1,7 @@
-const BASE_URL = '/todos';
+export const mainTodosEndpoint = '/todos';
 
-export const mainTodosEndpoint = BASE_URL;
+export const makeDeleteTodoEndpoint = (id: string) =>
+  `${mainTodosEndpoint}/${id}`;
 
-export const makeDeleteTodoEndpoint = (id: string) => `${BASE_URL}/${id}`;
-
-export const makeMarkTodoEndpoint = (id: string) => `${BASE_URL}/${id}/status`;
+export const makeMarkTodoEndpoint = (id: string) =>
+  `${mainTodosEndpoint}/${id}/status`;

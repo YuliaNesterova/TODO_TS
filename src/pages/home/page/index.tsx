@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import classnames from 'classnames/bind';
 import styles from './index.module.scss';
-import { ConnectedTodoComponent } from './_components/todo-component/todo-component';
+import { ConnectedTodoPage } from './_components/connected-todo-page';
 
 const cn = classnames.bind(styles);
 
@@ -11,7 +11,7 @@ export const Page = memo(() => (
   <div className={cn(BLOCK_NAME)} data-page="home-page">
     <aside className={cn(`${BLOCK_NAME}__sidebar`)} />
     <div className={cn(`${BLOCK_NAME}__card-wrapper`)}>
-      <ConnectedTodoComponent />
+      <ConnectedTodoPage />
     </div>
   </div>
 ));

@@ -1,4 +1,4 @@
-.Todo {
+.Todo-item {
   align-items: center;
   background: #fffefb;
   border-radius: 4px;
@@ -8,14 +8,6 @@
   margin-bottom: 10px;
   padding: 20px 15px;
   text-align: start;
-
-  &__text {
-    margin: 0;
-
-    &_checked {
-      text-decoration: line-through;
-    }
-  }
 
   &__buttons {
     align-items: center;

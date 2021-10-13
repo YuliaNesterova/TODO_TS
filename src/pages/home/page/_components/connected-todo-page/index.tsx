@@ -2,30 +2,29 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import classnames from 'classnames/bind';
 import { fetchTodosStart } from '@/_redux/todos';
-import { ConnectedTodoForm } from '@/pages/home/page/_components/form/form';
-import { ConnectedList } from '@/pages/home/page/_components/todo-list/todo-list';
-import { Header } from '../header/header';
-import styles from './todo-component.module.scss';
+import { ConnectedForm } from '@/pages/home/page/_components/connected-form';
+import { ConnectedTodoComponent } from '@/pages/home/page/_components/connected-todo-component';
+import { Header } from '../header';
+import styles from './index.module.scss';
 
 const cn = classnames.bind(styles);
-const BLOCK_NAME = 'Page';
+const BLOCK_NAME = 'Todo-page';
 
 type PropsType = {
   fetchTodos: () => void;
 };
 
-class TodoComponent extends Component<PropsType> {
+class WrappedContainer extends Component<PropsType> {
   componentDidMount() {
-    const { fetchTodos } = this.props;
-    fetchTodos();
+    this.props.fetchTodos();
   }
 
   render() {
     return (
       <div className={cn(BLOCK_NAME)}>
         <Header />
-        <ConnectedTodoForm />
-        <ConnectedList />
+        <ConnectedForm />
+        <ConnectedTodoComponent />
       </div>
     );
   }
@@ -35,7 +34,7 @@ const mapDispatchToProps = dispatch => ({
   fetchTodos: () => dispatch(fetchTodosStart()),
 });
 
-export const ConnectedTodoComponent = connect(
+export const ConnectedTodoPage = connect(
   null,
   mapDispatchToProps,
-)(TodoComponent);
+)(WrappedContainer);
