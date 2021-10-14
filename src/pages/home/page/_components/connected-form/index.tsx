@@ -9,22 +9,13 @@ type PropsType = {
   submitForm: typeof fetchFormManagerSagaAction;
 };
 
-type StateType = {
-  todoInputValue: string;
-  errorText: string;
-  disabled: boolean;
-};
-
-class WrappedContainer extends Component<PropsType, StateType> {
+class WrappedContainer extends Component<PropsType> {
   handleAddTodo = ({ todo }: { todo: string }) => {
     this.props.submitForm({
       formRequest: postNewTodo,
       formSuccessAction: fetchTodosSuccess,
       responseDataFormatter: ({ todos }) => todos,
-      callBackOnSuccess: () => {
-        this.setState({ todoInputValue: '' });
-      },
-      formValues: this.state.todoInputValue,
+      formValues: todo,
     });
   };
 
