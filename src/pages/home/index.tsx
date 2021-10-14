@@ -11,6 +11,7 @@ import todosReducer, {
   deleteTodoWatcherSaga,
   markTodoWatcherSaga,
   unmarkTodoWatcherSaga,
+  fetchTodosStart,
 } from '../../_redux/todos';
 import { Page } from './page';
 
@@ -47,6 +48,8 @@ const action = async ({ store }) => {
     name: 'uncheckTodoSaga',
     saga: unmarkTodoWatcherSaga,
   });
+
+  store.dispatch(fetchTodosStart());
 
   return {
     title: 'Home',
