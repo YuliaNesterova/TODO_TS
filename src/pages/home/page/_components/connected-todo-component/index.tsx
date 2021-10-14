@@ -36,7 +36,7 @@ class WrappedContainer extends Component<PropsType> {
 }
 
 const mapStateToProps = state => ({
-  allTodos: state.todosReducer,
+  allTodos: state.todosReducer ? state.todosReducer : [],
 });
 
 const mapDispatchToProps = dispatch => ({

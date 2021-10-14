@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addTodoAsync } from '@/_redux/todos';
+import { fetchFormManagerSagaAction } from '@mihanizm56/redux-core-modules';
+import { postNewTodo } from '@/api/requests/todos';
+import { fetchTodosSuccess } from '@/_redux/todos';
 import { FormElement } from './_components/form-element';
 
 type PropsType = {
-  addTodo: (values: string) => void;
+  submitForm: typeof fetchFormManagerSagaAction;
 };
 
 type StateType = {
@@ -44,8 +46,15 @@ class WrappedContainer extends Component<PropsType, StateType> {
   };
 
   handleAddTodo = () => {
-    this.props.addTodo(this.state.todoInputValue);
-    this.setState({ todoInputValue: '' });
+    this.props.submitForm({
+      formRequest: postNewTodo,
+      formSuccessAction: fetchTodosSuccess,
+      responseDataFormatter: ({ todos }) => todos,
+      callBackOnSuccess: () => {
+        this.setState({ todoInputValue: '' });
+      },
+      formValues: this.state.todoInputValue,
+    });
   };
 
   render() {
@@ -63,9 +72,9 @@ class WrappedContainer extends Component<PropsType, StateType> {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  addTodo: (todo: string) => dispatch(addTodoAsync(todo)),
-});
+const mapDispatchToProps = {
+  submitForm: fetchFormManagerSagaAction,
+};
 
 export const ConnectedForm = connect(
   null,
