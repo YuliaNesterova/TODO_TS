@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {
   deleteTodoAsync,
   markTodoAsync,
+  TodosDataSelector,
   unmarkTodoAsync,
 } from '@/_redux/todos';
 import { TodoList } from './_components/todo-list';
@@ -36,7 +37,7 @@ class WrappedContainer extends Component<PropsType> {
 }
 
 const mapStateToProps = state => ({
-  allTodos: state.todosReducer,
+  allTodos: TodosDataSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({

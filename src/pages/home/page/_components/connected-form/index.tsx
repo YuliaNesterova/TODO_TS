@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addTodoAsync } from '@/_redux/todos';
-import { FormElement } from './_components/form-element';
+import { fetchFormManagerSagaAction } from '@mihanizm56/redux-core-modules';
+import { FormApi } from 'final-form';
+import { fetchTodosSuccess } from '@/_redux/todos';
+import { postNewTodoRequest } from '@/api/requests/todos';
+import { FormView } from './_components/form-view';
 
 type PropsType = {
-  addTodo: (values: string) => void;
+  submitTodoForm: typeof fetchFormManagerSagaAction;
 };
 
 type StateType = {
@@ -14,58 +17,24 @@ type StateType = {
 };
 
 class WrappedContainer extends Component<PropsType, StateType> {
-  constructor(props) {
-    super(props);
-    this.state = { todoInputValue: '', errorText: '', disabled: false };
-  }
-
-  handleTodoInputChange = (event: string) => {
-    if (event.match(/[^a-zA-Zа-яА-ЯёË\s-]/gi)) {
-      this.setState({ errorText: 'Можно ввести только буквы', disabled: true });
-    } else if (event.length < 10) {
-      this.setState({ errorText: 'Минимум 10 символов', disabled: true });
-    } else if (event.length > 20) {
-      this.setState({ errorText: 'Максимум 20 символов', disabled: true });
-    } else {
-      this.setState({ errorText: '', disabled: false });
-    }
-
-    this.setState({ todoInputValue: event });
-  };
-
-  handleTodoInputBlur = () => {
-    this.setState({ errorText: '' });
-  };
-
-  handleTodoInputFocus = () => {
-    if (this.state.todoInputValue.length === 0) {
-      this.setState({ errorText: 'Заполните поле', disabled: true });
-    }
-  };
-
-  handleAddTodo = () => {
-    this.props.addTodo(this.state.todoInputValue);
-    this.setState({ todoInputValue: '' });
+  handleAddTodo = ({ todo }: { todo: string }, form: FormApi) => {
+    this.props.submitTodoForm({
+      formValues: todo,
+      formRequest: () => postNewTodoRequest(todo),
+      formSuccessAction: fetchTodosSuccess,
+      responseDataFormatter: ({ todos }) => todos,
+      callBackOnSuccess: form.reset,
+    });
   };
 
   render() {
-    return (
-      <FormElement
-        disabled={this.state.disabled}
-        errorText={this.state.errorText}
-        onAddTodo={this.handleAddTodo}
-        onBlur={this.handleTodoInputBlur}
-        onChange={this.handleTodoInputChange}
-        onFocus={this.handleTodoInputFocus}
-        value={this.state.todoInputValue}
-      />
-    );
+    return <FormView onAddTodo={this.handleAddTodo} />;
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  addTodo: (todo: string) => dispatch(addTodoAsync(todo)),
-});
+const mapDispatchToProps = {
+  submitTodoForm: fetchFormManagerSagaAction,
+};
 
 export const ConnectedForm = connect(
   null,

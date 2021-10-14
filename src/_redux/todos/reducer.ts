@@ -1,10 +1,10 @@
 import { fetchTodosSuccessActionName } from './constants';
 import { ActionsType, TodoState } from './types';
 
-const initialState: TodoState = [];
+export const todosInitialState: TodoState = [];
 
 const todosReducer = (
-  state: TodoState = initialState,
+  state: TodoState = todosInitialState,
   { type, payload }: ActionsType,
 ): TodoState => {
   switch (type) {
