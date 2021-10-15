@@ -1,30 +1,34 @@
 import { StoreInjectConfig } from '@mihanizm56/redux-core-modules';
+import { getAllTodosRequest } from '@/api/requests/todos';
 import todosReducer, {
+  fetchTodosSuccessAction,
   deleteTodoWatcherSaga,
-  fetchTodosSuccess,
   markTodoWatcherSaga,
   unmarkTodoWatcherSaga,
-} from '@/_redux/todos';
-import { getAllTodosRequest } from '@/api/requests/todos';
+  TODOS_REDUCER_NAME,
+  DELETE_TODO_SAGA_NAME,
+  MARK_TODO_SAGA_NAME,
+  UNMARK_TODO_SAGA_NAME,
+} from '../_redux/todos';
 
 export const storeInjectConfig: StoreInjectConfig = {
   reducersToInject: [
     {
-      name: 'todosReducer',
+      name: TODOS_REDUCER_NAME,
       reducer: todosReducer,
     },
   ],
   sagasToInject: [
     {
-      name: 'deleteTodoSaga',
+      name: DELETE_TODO_SAGA_NAME,
       saga: deleteTodoWatcherSaga,
     },
     {
-      name: 'markTodoSaga',
+      name: MARK_TODO_SAGA_NAME,
       saga: markTodoWatcherSaga,
     },
     {
-      name: 'unmarkTodoSaga',
+      name: UNMARK_TODO_SAGA_NAME,
       saga: unmarkTodoWatcherSaga,
     },
   ],
@@ -32,7 +36,7 @@ export const storeInjectConfig: StoreInjectConfig = {
     requestConfigList: [
       {
         request: getAllTodosRequest,
-        actionSuccess: fetchTodosSuccess,
+        actionSuccess: fetchTodosSuccessAction,
         responseDataFormatter: ({ todos }) => todos,
       },
     ],

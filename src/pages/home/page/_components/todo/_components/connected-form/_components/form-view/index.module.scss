@@ -1,0 +1,9 @@
+.Form-view {
+  padding-bottom: 20px;
+
+  &__form {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+  }
+}
