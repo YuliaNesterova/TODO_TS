@@ -1,11 +1,12 @@
 import React, { Component, FC } from 'react';
 import { connect } from 'react-redux';
 import {
+  TodoStoragePartType,
   deleteTodoAction,
   markTodoAction,
   unmarkTodoAction,
   TodosDataSelector,
-} from '../../../../../_redux/todos';
+} from '@/pages/home/_redux/todos';
 import { TodoList } from './_components/todo-list';
 import { TodosType, ParamsType } from './_types';
 
@@ -36,7 +37,7 @@ class WrappedContainer extends Component<PropsType> {
   }
 }
 
-const mapStateToProps = store => ({
+const mapStateToProps = (store: TodoStoragePartType) => ({
   allTodos: TodosDataSelector(store),
 });
 

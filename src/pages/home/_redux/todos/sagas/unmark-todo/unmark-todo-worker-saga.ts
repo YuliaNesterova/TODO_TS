@@ -1,15 +1,10 @@
 import { call, put } from 'redux-saga/effects';
 import { unmarkTodoRequest } from '@/api/requests/todos';
-import { setTodosSuccessAction, unmarkTodoAction } from '../../actions';
+import { setTodosSuccessAction } from '../../actions';
 
-type ActionsType = ReturnType<typeof unmarkTodoAction>;
-
-export function* unmarkTodoWorkerSaga(action: ActionsType) {
+export function* unmarkTodoWorkerSaga(payload: string) {
   try {
-    const { data, errorText, error } = yield call(
-      unmarkTodoRequest,
-      action.payload,
-    );
+    const { data, errorText, error } = yield call(unmarkTodoRequest, payload);
 
     if (error) {
       throw new Error(errorText);
