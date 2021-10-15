@@ -36,8 +36,8 @@ class WrappedContainer extends Component<PropsType> {
   }
 }
 
-const mapStateToProps = state => ({
-  allTodos: TodosDataSelector(state),
+const mapStateToProps = store => ({
+  allTodos: TodosDataSelector(store),
 });
 
 const mapDispatchToProps = {

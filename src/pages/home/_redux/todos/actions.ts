@@ -8,25 +8,25 @@ export const fetchTodosStartAction: IReduxBaseAction<
 });
 fetchTodosStartAction.type = FETCH_TODOS_START;
 
-export const FETCH_TODOS_SUCCESS = 'FETCH_TODOS_SUCCESS';
-export const fetchTodosSuccessAction: IReduxAction<
+export const SET_TODOS_SUCCESS = 'SET_TODOS_SUCCESS';
+export const setTodosSuccessAction: IReduxAction<
   string,
-  typeof FETCH_TODOS_SUCCESS
+  typeof SET_TODOS_SUCCESS
 > = payload => ({
-  type: FETCH_TODOS_SUCCESS,
+  type: SET_TODOS_SUCCESS,
   payload,
 });
-fetchTodosSuccessAction.type = FETCH_TODOS_SUCCESS;
+setTodosSuccessAction.type = SET_TODOS_SUCCESS;
 
-export const FETCH_TODOS_ERROR = 'FETCH_TODOS_ERROR';
-export const fetchTodosErrorAction: IReduxAction<
+export const SET_TODOS_ERROR = 'SET_TODOS_ERROR';
+export const setTodosErrorAction: IReduxAction<
   string,
-  typeof FETCH_TODOS_ERROR
+  typeof SET_TODOS_ERROR
 > = payload => ({
-  type: FETCH_TODOS_ERROR,
+  type: SET_TODOS_ERROR,
   payload,
 });
-fetchTodosErrorAction.type = FETCH_TODOS_ERROR;
+setTodosErrorAction.type = SET_TODOS_ERROR;
 
 export const ADD_TODO = 'ADD_TODO';
 export const addTodoAction: IReduxAction<

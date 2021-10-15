@@ -1,7 +1,7 @@
 import { StoreInjectConfig } from '@mihanizm56/redux-core-modules';
 import { getAllTodosRequest } from '@/api/requests/todos';
 import todosReducer, {
-  fetchTodosSuccessAction,
+  setTodosSuccessAction,
   deleteTodoWatcherSaga,
   markTodoWatcherSaga,
   unmarkTodoWatcherSaga,
@@ -36,7 +36,7 @@ export const storeInjectConfig: StoreInjectConfig = {
     requestConfigList: [
       {
         request: getAllTodosRequest,
-        actionSuccess: fetchTodosSuccessAction,
+        actionSuccess: setTodosSuccessAction,
         responseDataFormatter: ({ todos }) => todos,
       },
     ],

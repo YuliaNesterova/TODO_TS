@@ -1,17 +1,28 @@
-import { FETCH_TODOS_SUCCESS, fetchTodosSuccessAction } from './actions';
-import { TodoListType } from './_types';
+import { setTodosSuccessAction } from './actions';
+import { TodoStorageType } from './_types';
 
-type ActionsType = ReturnType<typeof fetchTodosSuccessAction>;
+type ActionsType = ReturnType<typeof setTodosSuccessAction>;
 
-export const todosInitialState: TodoListType = [];
+export const todosInitialState: TodoStorageType = {
+  isLoading: false,
+  data: {
+    todos: [],
+  },
+};
 
 const todosReducer = (
   state = todosInitialState,
   action: ActionsType,
-): TodoListType => {
+): TodoStorageType => {
   switch (action.type) {
-    case FETCH_TODOS_SUCCESS:
-      return [...action.payload];
+    case setTodosSuccessAction.type:
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          todos: [...action.payload],
+        },
+      };
     default:
       return state;
   }

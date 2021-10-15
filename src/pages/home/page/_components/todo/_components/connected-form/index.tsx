@@ -2,7 +2,7 @@ import React, { Component, FC } from 'react';
 import { connect } from 'react-redux';
 import { fetchFormManagerSagaAction } from '@mihanizm56/redux-core-modules';
 import { FormApi } from 'final-form';
-import { fetchTodosSuccessAction } from '@/pages/home/_redux/todos';
+import { setTodosSuccessAction } from '@/pages/home/_redux/todos';
 import { postNewTodoRequest } from '@/api/requests/todos';
 import { FormView } from './_components/form-view';
 
@@ -15,7 +15,7 @@ class WrappedContainer extends Component<PropsType> {
     this.props.submitTodoForm({
       formValues: todo,
       formRequest: () => postNewTodoRequest(todo),
-      formSuccessAction: fetchTodosSuccessAction,
+      formSuccessAction: setTodosSuccessAction,
       responseDataFormatter: ({ todos }) => todos,
       callBackOnSuccess: form.reset,
     });
