@@ -7,6 +7,8 @@ import {
   FormSimpleInput,
 } from '@wildberries/ui-kit';
 import { FormApi } from 'final-form';
+import i18next from 'i18next';
+import { TODO_PAGE_TRANSLATIONS } from '@/pages/home/_constants/translations';
 import { fieldValidations } from './_utils';
 import styles from './index.module.scss';
 
@@ -28,7 +30,7 @@ export const FormView = memo(({ onAddTodo }: PropsType) => {
               component={FormSimpleInput}
               id="todo-input"
               name="todo"
-              placeholder="Add todo"
+              placeholder={i18next.t(`${TODO_PAGE_TRANSLATIONS.placeholder}`)}
               type="text"
               validate={fieldValidations}
             />

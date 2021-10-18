@@ -1,0 +1,158 @@
+{
+  "todo": {
+    "title": "Todo list",
+    "placeholder": "Add Todo"
+  },
+  "backend-errors": {
+    "timeout": "Ошибка сервиса: timeout",
+    "failedToAuthorize": "Не удалось авторизироваться",
+    "permissionDenied": "Недостаточно прав",
+    "serviceError": "Ошибка сервиса",
+    "internalServiceErrorNews": "Ошибка при получении новостей для домашней страницы",
+    "internalServiceErrorWaitlist": "Ошибка сервиса при получении статистики по листу ожидания",
+    "serviceErrorGetWaitlistXlsx": "Ошибка сервиса: невозможно получить отчёт по листу ожидания",
+    "serviceErrorRequestWaitlistXlsx": "Ошибка запроса: невозможно запросить данные по листу ожидания",
+    "serviceNotReadyWaitlistXlsx": "Отчет формируется. Попробуйте чуть позднее",
+    "cannotGetSupplier": "Не удалось получить данные о поставщике"
+  },
+  "home-page": {
+    "title": "Wildberries",
+    "emptyTitle": "Пока ничего нет",
+    "downloadReport": "Скачать отчет",
+    "serverError": "Сервер не доступен",
+    "refresh": "Обновить",
+    "refreshedText": "Обновлено {date} в {time}"
+  },
+  "analytics": {
+    "weeklyDynamics": "Еженедельная динамика и анализ продаж",
+    "warehouseRemains": "Отчет по остаткам на складе",
+    "sales": "Продажи",
+    "summaryReport": "Сводный по поставщику",
+    "analytics": "Аналитика",
+    "analyticsLink": "Все отчеты"
+  },
+  "awaiting": {
+    "name": "Название товара",
+    "nm": "Номенклатура",
+    "numberOfItems": "Количество",
+    "awaiting": "Лист ожидания",
+    "awaitingDownloadButtonText": "Скачать отчет",
+    "emptyAwaitingSubtitle": "Пока никто из покупателей не добавил ваши товары в лист ожидания",
+    "awaitingTooltip": "Топ ваших товарных категорий, товары из которых покупатели добавили в свой 'Лист ожидания' за последние 30 дней."
+  },
+  "feedbacks": {
+    "feedbacks": "Отзывы пользователей",
+    "feedbacksLink": "Все отзывы",
+    "emptyFeedbacksSubtitle": "Как только вам оставят отзыв, он появится здесь"
+  },
+  "deficit": {
+    "subject": "Предмет",
+    "brand": "Бренд",
+    "deficit": "Дефицит товаров",
+    "deficitTooltip": "Отражает потребность в товаре на складе, основываясь на расчетах аналитической программы.",
+    "emptyDeficitSubtitle": "Здесь отобразятся товары, которые мы рекомендуем подсортировать, основываясь на ваших продажах",
+    "deficitDownloadButtonText": "Скачать отчет"
+  },
+  "steps": {
+    "advantages": "Преимущества",
+    "reducedCommission": "Сниженная комиссия на продажи",
+    "calendarText": "Выбор комфортного срока поставки товаров",
+    "clientTransportation": "Возможность отгрузки товаров или доставка до клиента в 6 городах",
+    "goodsControl": "Самостоятельный контроль за остатками товаров",
+    "firstStep": "Заполните реквизиты",
+    "secondStep": "Создайте карточки товаров",
+    "thirdStep": "Добавьте склад и остатки",
+    "fourthStep": "Получите задания на отгрузку",
+    "commission": "Стандартная комиссия на продажи",
+    "logistics": "Логистика и хранение товаров на складе WB",
+    "transportation": "Возможность отгрузки товаров на любой склад WB",
+    "analysis": "Удобный анализ и отслеживание остатков",
+    "beginning": "С чего начать",
+    "thirdStepWBWarehouse": "Создайте заказ",
+    "fourthStepWBWarehouse": "Запланируйте поставку",
+    "myWarehouse": "Свой склад",
+    "WBWarehouse": "Склад WB",
+    "steps": "Начало продаж"
+  },
+  "questions": {
+    "questions": "Вопросы пользователей",
+    "questionsLink": "Все вопросы",
+    "emptyQuestionsSubtitle": "Как только Вам зададут вопрос, он появится здесь"
+  },
+  "news": {
+    "news": "Новости",
+    "newsLink": "Все новости",
+    "emptyNewsSubtitle": "Как только для Вас будут новости, они появятся здесь"
+  },
+  "stats": {
+    "numberOfItemsTitle": "Количество",
+    "numberOfItemsTextValueKey": "{value} шт.",
+    "numberOfItemsTextDiffKey": "{valueDiff} шт. от вчера",
+    "sumOfItemsTitle": "Сумма",
+    "sumOfItemsTextValueKey": "{value} руб.",
+    "sumOfItemsTextDiffKey": "{valueDiff} руб. от вчера",
+    "buyoutTitle": "Выкупили",
+    "orderTitle": "Заказали",
+    "refreshButtonText": "Обновить",
+    "lastWeekLabel": "Прошлая неделя: ",
+    "thisWeekLabel": "Текущая неделя: ",
+    "lastWeekLegendLabel": "Прошлая неделя",
+    "thisWeekLegendLabel": "Текущая неделя",
+    "dateLabel": "Дата: ",
+    "сhartLabelText": "тыс. руб.",
+    "chartTitle": "Сводка за сегодня",
+    "stats": "Статистика",
+    "emptyStatsSubtitle": "Как только у Вас будет статистика, она появится здесь"
+  },
+  "workload": {
+    "chartTitle": "Сводка времени ожидания на {time}",
+    "todayLabel": "Сегодня",
+    "yesterdayLabel": "Вчера",
+    "lastWeekLabel": "Неделю назад",
+    "timeTooltip": "Время: ",
+    "todayTooltip": "Сегодня: ",
+    "yesterdayTooltip": "Вчера: ",
+    "lastWeekTooltip": "Неделю назад: ",
+    "refreshButtonText": "Обновить",
+    "selectedDayMinute": "{minute} мин.",
+    "axisYLabel": "Мин.",
+    "axisXLabel": "Часы",
+    "statCardValue": "{value} мин.",
+    "workload": "Загруженность склада",
+    "emptyWorkloadSubtitle": "Здесь вы увидите загруженность наших складов"
+  },
+  "supplies": {
+    "number": "Номер",
+    "date": "Дата",
+    "warehouse": "Склад",
+    "itemsNumber": "Кол-во товаров",
+    "status": "Статус",
+    "supplyDate": "Дата поставки",
+    "errorCount": "{errorCount, plural, =1 {1 ошибка} few {{errorCount} ошибки} other {{errorCount} ошибок}}",
+    "supplies": "Поставки",
+    "suppliesLink": "Все поставки",
+    "emptySuppliesSubtitle": "Здесь вы сможете отслеживать статус ваших поставок",
+    "emptySuppliesLinkText": "Создать поставку"
+  },
+  "turnover": {
+    "intervals": "Интервалы",
+    "share": "Доля",
+    "goodsAmount": "Кол-во товаров",
+    "turnoverRange0": "Не продавались 7 дней или более",
+    "turnoverRange1": "Меньше 60 дн.",
+    "turnoverRange2": "От 60 до 100 дн.",
+    "turnoverRange3": "От 100 до 200 дн.",
+    "turnoverRange4": "Больше 200 дн.",
+    "productCount": "{value} шт.",
+    "turnover": "Оборачиваемость",
+    "turnoverTooltip": "Период времени, за который продаётся средний запас вашего товара, находящегося на складе.",
+    "turnoverLink": "Скачать полный отчет",
+    "emptyTurnoverSubtitle": "Здесь вы увидите оборачиваемость ваших товаров",
+    "turnoverDownloadButtonText": "Скачать полный отчет"
+  },
+  "errors": {
+    "errors": "Ошибки в товарах",
+    "errorsLink": "Все жалобы",
+    "emptyErrorsSubtitle": "Здесь вы увидите ошибки в ваших товарах, которые необходимо исправить"
+  }
+}

@@ -8,4 +8,12 @@ module.exports = app => {
       target: 'http://localhost:8080',
     }),
   );
+  app.use(
+    '/I18N',
+    proxy({
+      // target: 'http://speu-i18n.suppliers-portal-ru.svc.k8s.stage',
+      target: 'http://127.0.0.1:8080',
+      changeOrigin: true,
+    }),
+  );
 };

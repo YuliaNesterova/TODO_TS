@@ -1,1 +1,1 @@
-export const appNamespace = 'todo-test';
+export const appNamespace = 'todo-wb';
